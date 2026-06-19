@@ -43,6 +43,8 @@ The objective is to create a practical bridge between power electronics domain e
 
 The AIPE framework is organised as a multi-agent engineering workflow.
 
+![AIPE Multi-Agent Architecture](images/aipe-multi-agent-architecture.png)
+
 At the centre is a **Chief Architect Agent**. It interprets the design intent, selects the workflow, coordinates domain agents, manages assumptions, detects conflicts, and decides whether a design should proceed, iterate, or be rejected.
 
 Around it are specialised domain agents:
@@ -115,6 +117,8 @@ The community welcomes:
 The shared goal is ambitious: to maximise automation across the power electronics industry while keeping engineering decisions transparent, auditable, and physically grounded.
 
 ## Roadmap
+
+![AIPE Labs Roadmap](images/aipe-labs-roadmap.png)
 
 ### Stage 1: Open Knowledge and Reusable Workflows
 
