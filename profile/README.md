@@ -1,210 +1,90 @@
+<div align="center">
+
 # AIPE Labs
 
-**AIPE Labs is an open-source community for AI-assisted power electronics automation.**
+### AI for Power Engineering
 
-Our vision is to make advanced power electronics design, simulation, optimisation, documentation, and validation more automated, traceable, reusable, and accessible for every power electronics engineer, researcher, and scientist.
+**An open engineering hub for power and energy.**<br>
+Learn established engineering knowledge, build with reusable tools and data, and explore emerging ideas—with traceable evidence and human review.
 
-Power electronics is becoming too multidisciplinary for fragmented manual workflows alone. Converter design now requires coordinated decisions across topology, semiconductor devices, magnetics, capacitors, control, thermal management, EMI, reliability, manufacturability, cost, simulation, testing, and lifecycle feedback. AIPE exists to build the open architecture, tools, datasets, agents, and workflows needed to automate as much of this engineering process as possible.
+[Website](https://aipel.co.uk/) · [Hub](https://aipel.co.uk/hub/) · [Academy](https://aipel.co.uk/academy/) · [Frontiers](https://aipel.co.uk/frontiers/) · [AIPE for coding agents](https://aipel.co.uk/plugin/) · [Machine-readable capabilities](https://aipel.co.uk/aipe.json)
 
-## Mission
+</div>
 
-AIPE means **AI for Power Electronics**.
+---
 
-The long-term mission is not only to build a single design assistant. The mission is to help the power electronics community move toward a more automated engineering ecosystem:
+## What is AIPE?
 
-- from natural-language requirements to structured converter specifications
-- from specifications to topology and architecture exploration
-- from topology to device, magnetics, passive, control, and thermal design
-- from design candidates to multi-objective optimisation and Pareto comparison
-- from calculations to simulation-ready models and validation plans
-- from project experience to reusable open knowledge, databases, and AI workflows
-- from isolated tools to a community-driven automation framework for the whole field
+**AIPE (AI for Power Engineering)** is a modular engineering ecosystem connecting knowledge, datasets, analytical models, specialist software tools, AI-assisted workflows, and reproducible engineering evidence. Power electronics is its first engineering domain, with power systems and renewable energy within its broader scope.
 
-AIPE is designed to augment engineers, not replace engineering judgement. Human experts remain responsible for assumptions, safety margins, model validity, hardware review, and final design approval. The role of AIPE is to automate repetitive exploration, preserve design rationale, expose trade-offs, and make expert workflows reusable.
+Independent, inspectable engineering capabilities can be used on their own or composed into larger workflows.
 
-## Why AIPE
+| Learn | Build | Explore |
+| :-- | :-- | :-- |
+| **[AIPE Academy](https://aipel.co.uk/academy/)** — first principles, guided lessons and reproducible labs. | **[AIPE Hub](https://aipel.co.uk/hub/)** — reusable data, models, engineering tools and workflows. | **[AIPE Frontiers](https://aipel.co.uk/frontiers/)** — research directions, hypotheses and questions with explicit evidence status. |
 
-Power electronic converter design is still scattered across datasheets, empirical rules, spreadsheets, analytical models, simulation tools, laboratory notes, and personal experience. This makes it difficult to explore large design spaces, compare alternatives transparently, and reuse knowledge across projects.
+## How the ecosystem fits together
 
-AIPE addresses this by combining:
+![AIPE ecosystem: Academy, Hub and Frontiers; Core, Registry and Workflows; specialised engineering capabilities](images/aipe-multi-agent-architecture.png)
 
-- LLM-based reasoning and workflow coordination
-- deterministic engineering calculators
-- curated component and material databases
-- rule-based safety and derating checks
-- optimisation routines
-- simulation and tool-chain interfaces
-- human-in-the-loop engineering review
-- open-source community knowledge
+*Conceptual ecosystem map; capability availability and evidence status are documented by each project.*
 
-The objective is to create a practical bridge between power electronics domain expertise and agentic engineering software.
+The three foundational repositories have distinct responsibilities:
 
-## Architecture
+- **[AIPE Core](https://github.com/FulongLi/AIPE-Core)** specifies the shared *Engineering State*, schemas, units, provenance and evidence contracts. It does **not** run solvers or agents.
+- **[AIPE Registry](https://github.com/FulongLi/AIPE-Registry)** validates capability manifests and builds machine-readable and agent-readable indexes. It does **not** execute engineering tools.
+- **[AIPE Workflows](https://github.com/FulongLi/AIPE-Workflows)** composes specialist capabilities into checkpointed task graphs, records results and applies verification gates. Engineering calculations remain with the specialist tools.
 
-The AIPE framework is organised as a multi-agent engineering workflow.
+The architecture deliberately separates engineering facts and evidence from AI-generated explanations. A software check, an analytical result, a numerical simulation and a laboratory measurement are different levels of evidence.
 
-![AIPE Multi-Agent Architecture](images/aipe-multi-agent-architecture.png)
+## Explore the repositories
 
-At the centre is a **Chief Architect Agent**. It interprets the design intent, selects the workflow, coordinates domain agents, manages assumptions, detects conflicts, and decides whether a design should proceed, iterate, or be rejected.
+Most active AIPE development repositories currently live under **[FulongLi](https://github.com/FulongLi)**, while this **[AIPE-Labs organisation](https://github.com/AIPE-Labs)** provides a community-facing entry point. The links below lead to the relevant source repositories.
 
-Around it are specialised domain agents:
+| Area | Projects and what they do |
+| :-- | :-- |
+| **Orchestration** | [Core](https://github.com/FulongLi/AIPE-Core) · [Registry](https://github.com/FulongLi/AIPE-Registry) · [Workflows](https://github.com/FulongLi/AIPE-Workflows) |
+| **Electrical and devices** | [Electrical Design](https://github.com/FulongLi/AIPE-Electrical-Design) · [Semiconductor Database](https://github.com/FulongLi/AIPE-Semiconductor-Database) · [Converter Optimisation](https://github.com/FulongLi/AIPE-Converter-Optimisation-Agent) |
+| **Magnetics and thermal** | [Magnetics Database](https://github.com/FulongLi/AIPE-Magnetics-Database) · [Thermal Design](https://github.com/FulongLi/AIPE-Thermal-Design) |
+| **Circuit and field simulation** | [Simulation Skills](https://github.com/FulongLi/AIPE-Simulation-Skills) · [Field Simulation](https://github.com/FulongLi/AIPE-Field-Simulation) |
+| **Engineering design agents** | [Sketcher](https://github.com/FulongLi/AIPE-Sketcher) · [CAD Agent](https://github.com/FulongLi/AIPE-CAD-Agent) · [PCB Agent](https://github.com/FulongLi/AIPE-PCB-Agent) |
+| **Knowledge and publication** | [Academy](https://github.com/FulongLi/AIPE-Academy) · [IEEE Paper Agent](https://github.com/FulongLi/AIPE-IEEE-Paper-Agent) · [AIPE Doc](https://github.com/FulongLi/AIPE-Doc) |
+| **Public interface** | [AIPE website](https://github.com/FulongLi/Spirit-Connect-AIPE-Labs) · [aipel.co.uk](https://aipel.co.uk/) |
 
-| Agent | Responsibility |
-| --- | --- |
-| Requirement Agent | Converts natural-language prompts and partial specifications into structured requirements. |
-| Topology Agent | Generates, ranks, and rejects converter topology candidates with engineering reasoning. |
-| Design Variable Agent | Defines feasible search bounds for frequency, voltage ratio, ripple, resonant parameters, and related variables. |
-| Semiconductor Agent | Selects Si, SiC, and GaN devices and estimates conduction, switching, and thermal risks. |
-| Magnetics Agent | Designs inductors and transformers, including core choice, winding, loss, saturation, and manufacturability. |
-| Passive Agent | Sizes DC-link, input, output, resonant, snubber, and EMI-related passive components. |
-| Control Agent | Proposes modulation, control loops, sensing, protection, and digital implementation logic. |
-| Thermal Agent | Converts loss distribution into temperature estimates and cooling requirements. |
-| EMI and Reliability Agent | Identifies EMI risks, derating issues, failure modes, and safety concerns. |
-| Cost and Supply Agent | Estimates BOM cost, alternative parts, and supply-chain risk. |
-| Optimisation Agent | Performs constrained multi-objective optimisation and Pareto ranking. |
-| Simulation Agent | Generates simulation plans, parameter sets, and tool-ready workflows. |
-| Review Agent | Performs senior-engineer-style sanity checking before a design is accepted. |
-| Report Agent | Produces reports, comparison tables, risk registers, BOMs, and documentation. |
+Related research and resources: [MOSFET ANN modelling](https://github.com/FulongLi/AIPE-MOSFET-ANN-Modelling), [solid-state transformer studies](https://github.com/FulongLi/AIPE-Solid-State-Transformer), [inductor design example](https://github.com/FulongLi/AIPE-Magnetics-Agnet-Inductor-Design-Example), [DC microgrid test bench](https://github.com/FulongLi/DCMicrogridTestBench), [PCB Rogowski coils](https://github.com/FulongLi/PCB-Rogowski-Coil), [Transistor Database](https://github.com/FulongLi/transistordatabase), [Power Electronics Device Library](https://github.com/FulongLi/PowerElectronicsDeviceLibrary), [buck converter optimisation](https://github.com/FulongLi/BuckConverterOptimisation) and the [open-source power electronics catalogue](https://github.com/FulongLi/awesome-open-source-power-electronics).
 
-## Unified Design Object
+Each project has its own requirements, maturity, supported domain and licence. Core, Registry and Workflows declare MIT; Academy uses CC BY 4.0; Thermal Design has module-specific CC BY 4.0 and MIT terms. Sketcher's draft source-available licence permits personal, non-commercial use and requires permission for commercial use. Several other projects have no declared repository licence or incomplete licence documentation. **Check each repository's licence and third-party data terms before use, redistribution or commercial adoption.**
 
-A core AIPE idea is that all agents should work on a shared structured design state rather than producing isolated outputs.
+## The engineering feedback loop
 
-The **Unified Converter Design Object** records:
+![Conceptual AIPE feedback loop: learn, design, simulate, measure, share; physical testing is required for hardware claims](images/aipe-labs-roadmap.png)
 
-- requirements and assumptions
-- topology candidates and rejected options
-- selected topology and design variables
-- semiconductor, magnetics, passive, and cooling candidates
-- losses, thermal results, EMI risks, reliability risks, and cost estimates
-- optimisation results and Pareto comparisons
-- simulation plans and validation requirements
-- review warnings and human decisions
-- design history and reasons for each iteration
+**Learn → Design → Simulate → Measure → Share → Learn.** These are process stages, not completed milestones. Record assumptions, model limits and evidence at every step; physical testing and human review are required to substantiate hardware claims.
 
-This shared object makes the workflow traceable. For example, if a lower switching frequency reduces switching loss but increases magnetic volume, the trade-off should be recorded explicitly instead of disappearing inside an optimisation result.
+A representative integrated benchmark is a **10 kW dual-active-bridge converter (800 V → 400 V, 100 kHz, single-phase-shift modulation)**. The [Workflows](https://github.com/FulongLi/AIPE-Workflows) repository connects electrical calculations, circuit simulation, magnetics, thermal assessment, geometry, field simulation and PCB tasks while preserving inputs, limitations and verification records.
 
-## Workflow Logic
+**Current scope:** these are evolving research and engineering software prototypes. Where a workflow reports software checks or solver-backed numerical results, that does *not* establish a manufactured, measured or safety-certified converter. Device ratings, insulation, protection, EMI, thermal limits and final hardware decisions require appropriate engineering assessment and validation.
 
-AIPE follows an iterative state-based workflow:
+## Start here
 
-1. Parse requirements and identify missing information.
-2. Generate candidate converter architectures.
-3. Define design variables and feasible search boundaries.
-4. Select devices, magnetics, passives, control methods, and cooling assumptions.
-5. Run deterministic calculations and rule-based checks.
-6. Compare candidates by efficiency, volume, cost, temperature, EMI risk, reliability, and manufacturability.
-7. Resolve conflicts through optimisation, review, and human judgement.
-8. Generate simulation-ready models, validation plans, and engineering reports.
-9. Feed review results and test knowledge back into the design object and community knowledge base.
+- **Discover:** use the [AIPE Hub](https://aipel.co.uk/hub/) or read the [capability index](https://aipel.co.uk/aipe.md) to find tools, models, data and workflows.
+- **Learn:** explore [AIPE Academy](https://github.com/FulongLi/AIPE-Academy), which distinguishes completed lessons and labs from planned curriculum.
+- **Try a focused tool:** start with [AIPE Sketcher](https://github.com/FulongLi/AIPE-Sketcher), [AIPE Magnetics](https://github.com/FulongLi/AIPE-Magnetics-Database), or another relevant specialist repository and follow its documented installation and validation steps.
+- **Explore integrated workflows:** consult the [10 kW DAB example](https://github.com/FulongLi/AIPE-Workflows/tree/main/examples/dab-10kw) and its reported verification gates.
+- **Contribute:** open an issue, propose a pull request or share reproducible test cases in the relevant source repository. Follow each repository's contribution and licensing guidance.
 
-The aim is not to hide engineering compromises behind one automatically generated answer. AIPE should expose why each candidate works, why another candidate was rejected, and what must be validated next.
+## Principles
 
-## Open-Source Community
+**Physics before presentation.** Use explicit assumptions, SI units and known model validity limits.<br>
+**Evidence before claims.** Distinguish calculations, simulations, software checks and measurements.<br>
+**Composable by design.** Prefer standalone specialist capabilities with versioned interfaces.<br>
+**Human accountability.** AI assists engineering judgement; it does not replace design review or safety responsibility.
 
-AIPE Labs is built as an open-source community because power electronics automation is bigger than one person, one lab, or one company.
+---
 
-The community welcomes:
+<div align="center">
 
-- power electronics engineers
-- researchers and PhD students
-- semiconductor and magnetics specialists
-- control and simulation experts
-- AI agent and software developers
-- educators building reusable engineering workflows
-- scientists working on automated design and optimisation
+**AIPE Labs · Spirit Connect**<br>
+Cardiff, United Kingdom · [aipel.co.uk](https://aipel.co.uk/) · [Contact](https://aipel.co.uk/contact/)
 
-The shared goal is ambitious: to maximise automation across the power electronics industry while keeping engineering decisions transparent, auditable, and physically grounded.
-
-## Roadmap
-
-![AIPE Labs Roadmap](images/aipe-labs-roadmap.png)
-
-### Stage 1: Open Knowledge and Reusable Workflows
-
-- Collect topology knowledge, design rules, and reference workflows.
-- Build reusable simulation and debugging skills for PLECS, LTspice, SIMetrix/SIMPLIS, MATLAB/Simulink, ANSYS, and COMSOL.
-- Organise power electronics research-writing and documentation workflows.
-- Publish examples that show how AI agents can assist real converter projects.
-
-### Stage 2: Structured Databases and Deterministic Calculators
-
-- Develop semiconductor, magnetic material, passive component, and cooling databases.
-- Build loss, thermal, derating, ripple, magnetics, and cost calculators.
-- Link every recommendation to data, assumptions, and engineering rules.
-- Support traceable early-stage screening before high-fidelity simulation.
-
-### Stage 3: Multi-Agent Converter Design Automation
-
-- Implement requirement, topology, semiconductor, magnetics, passive, control, thermal, EMI, reliability, cost, optimisation, simulation, review, and report agents.
-- Use a shared converter design object to coordinate all agents.
-- Support DC-DC, AC-DC, DC-AC, AC-AC, isolated, bidirectional, and grid-connected converter workflows.
-- Generate simulation-ready candidate designs and validation plans.
-
-### Stage 4: Optimisation, Simulation, and Experimental Feedback
-
-- Integrate Pareto optimisation for efficiency, power density, cost, temperature, EMI risk, and reliability.
-- Connect AIPE outputs to simulation tools and hardware validation workflows.
-- Capture test results, model errors, and design review feedback.
-- Improve future designs through reusable design history.
-
-### Stage 5: Toward Full-Stack Power Electronics Automation
-
-- Connect requirements, design, simulation, manufacturing planning, testing, field-data feedback, and redesign.
-- Build community-maintained benchmarks and validation cases.
-- Enable AI-assisted design environments for converters, microgrids, solid-state transformers, EV charging, data-centre power, renewable energy, and advanced power systems.
-- Move toward the long-term vision of highly automated power electronics engineering.
-
-## Current Projects
-
-| Project | Focus |
-| --- | --- |
-| [Spirit Connect AIPE Labs](https://github.com/FulongLi/Spirit-Connect-AIPE-Labs) | Public AIPE Labs website for AI-assisted power electronics converter design automation. |
-| [AIPE Power Electronics Design Agent](https://github.com/FulongLi/AIPE-Power-Electronics-Design-Agent) | AI assistant for topology selection, converter calculations, magnetics design, component guidance, Pareto optimisation, RAG, CLI, web UI, and desktop UI. |
-| [AIPE MOSFET ANN Modelling](https://github.com/FulongLi/AIPE-MOSFET-ANN-Modelling) | ANN-based MOSFET switching-loss, conduction-loss, and thermal-impedance prediction with PyTorch and Flask. |
-| [AIPE Converter Optimisation Agent](https://github.com/FulongLi/AIPE-Converter-Optimisation-Agent) | Python optimisation workflow for converter volume-loss exploration and ANN surrogate modelling. |
-| [AIPE Simulation Agents](https://github.com/FulongLi/AIPE-Simulation-Agents) | AI skills for simulation, debugging, digital control, electromagnetic, and thermal workflows. |
-| [AIPE Power Device Database](https://github.com/FulongLi/AIPE-Power-Device-Database) | Foundation for structured power-device management and evaluation. |
-| [AIPE Magnetics Library](https://github.com/FulongLi/AIPE-Magnetics-Library) | Magnetics reference assets and current-sensing related materials. |
-| [AIPE Magnetics Inductor Design Example](https://github.com/FulongLi/AIPE-Magnetics-Agnet-Inductor-Design-Example) | Inductor design documentation and technical drawings. |
-| [AIPE Solid State Transformer](https://github.com/FulongLi/AIPE-Solid-State-Transformer) | SST design documentation for multi-stage conversion, high-frequency isolation, control, and smart-grid integration. |
-| [AIPE IEEE Paper Agent](https://github.com/FulongLi/AIPE-IEEE-Paper-Agent) | LaTeX and AI writing workflow for IEEE-style research papers. |
-
-## Related Power Electronics Work
-
-| Project | Focus |
-| --- | --- |
-| [DC Microgrid Test Bench](https://github.com/FulongLi/DCMicrogridTestBench) | Low-voltage DC microgrid platform for converter design, hierarchical control, energy management, grid-connected operation, and islanded operation. |
-| [PCB Rogowski Coil](https://github.com/FulongLi/PCB-Rogowski-Coil) | PCB-based Rogowski coil designs for current sensing and power electronics development. |
-| [Transistor Database](https://github.com/FulongLi/transistordatabase) | Tool for managing and evaluating power transistors. |
-| [Power Electronics Device Library](https://github.com/FulongLi/PowerElectronicsDeviceLibrary) | Python-based power electronics device library work. |
-| [Double Pulse Test Automation](https://github.com/FulongLi/DoublePulseTestAutomation) | Automation-oriented workflow for power-device double-pulse testing. |
-| [Buck Converter Optimisation](https://github.com/FulongLi/BuckConverterOptimisation) | Buck-converter optimisation workflows. |
-| [Awesome Open Source Power Electronics](https://github.com/FulongLi/awesome-open-source-power-electronics) | Curated list of open-source power electronics tools. |
-
-## Research Direction
-
-AIPE Labs is developing a research and engineering foundation for:
-
-- AI-assisted converter architecture exploration
-- topology knowledge bases and rejection logic
-- semiconductor device modelling and derating
-- magnetics and passive component automation
-- control synthesis and digital implementation support
-- loss, thermal, EMI, reliability, and cost modelling
-- multi-objective optimisation and Pareto design
-- simulation-ready workflow generation
-- human-in-the-loop design review
-- open community benchmarks for power electronics automation
-
-## Join the Vision
-
-AIPE Labs is for people who believe power electronics can become more open, more automated, and more collaborative.
-
-If you are building tools, datasets, models, design rules, simulation workflows, tutorials, benchmarks, or agentic engineering systems for power electronics, you are part of the future AIPE is trying to create.
-
-## Links
-
-- GitHub: [FulongLi](https://github.com/FulongLi)
-- Website: [fulongli.github.io](https://fulongli.github.io)
-- AIPE Labs: [Spirit Connect AIPE Labs](https://fulongli.github.io/Spirit-Connect-AIPE-Labs/)
+</div>
